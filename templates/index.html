@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online C Compiler</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #efefef;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff0000;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: large;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #46d34d;
+            color: white;
+            border: 0.2px solid black;
+            cursor: pointer;
+            animation: 0.2sec;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00ff0d;
+
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        .output-section {
+            margin-top: 50px;
+        }
+
+        .error {
+            color: #FF0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online C Compiler</h1>
+        <form action="/compile" method="post">
+            <label for="code">Enter your C code:</label><br>
+            <textarea id="code" name="code" required></textarea><br>
+            <label for="input">Input (if any):</label><br>
+            <textarea id="input" name="input"></textarea><br>
+            <input type="submit" value="Compile & Run">
+        </form>
+        
+        {% if output %}
+        <div class="output-section">
+            <h2>Output:</h2>
+            <pre>{{ output }}</pre>
+        </div>
+        {% endif %}
+        
+        {% if error %}
+        <div class="output-section error">
+            <h2>Error:</h2>
+            <pre>{{ error }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
