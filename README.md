@@ -6,7 +6,7 @@ This project aims to provide a web-based interface for compiling and executing C
 Setup Instructions:
 
 Clone the Repository:
-git clone https://github.com/zeusgodyt/C-compiler-with-Flask-Simple-
+git clone https://github.com/zeusgodyt/C-compiler-with-Flask-Simple
 
 
 Run the Application:
